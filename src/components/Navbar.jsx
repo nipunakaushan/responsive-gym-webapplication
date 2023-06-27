@@ -8,8 +8,8 @@ import Logo from '../images/logo.png'
 
 const Navbar = () => {
   return (
-    <div>
-        <div className='Container nav_container'>
+    <nav>
+        <div className='Container nav__container'>
         {/* Logo,nav links,nav button */}
             <Link to="/" className='logo'>
                 <img src={Logo} alt='Nav Logo'/>
@@ -20,7 +20,7 @@ const Navbar = () => {
                     links.map(({name, path},index)=>{
                         return (
                             <li>
-                                <NavLink to={path}>{name}</NavLink>   
+                                <NavLink to={path} className={({isActive}) => isActive ? 'active-nav' : ''}>{name}</NavLink>   
                             </li>
                         )
                     })
@@ -28,7 +28,7 @@ const Navbar = () => {
             </ul>
                 <button className='nav__toggle-btn'><FaBars/></button>
         </div>
-    </div>
+    </nav>
   )
 }
 
